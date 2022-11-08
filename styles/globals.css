@@ -2,20 +2,20 @@
 
 @font-face {
   font-family: 'Hamish';
-  src: url('font/Hamish.woff') format('woff'),
+  src: url('../public/static/media/Hamish.woff') format('woff'),
        url('font/Hamish.otf') format("opentype");
 }
 @font-face {
   font-family: 'Canobis';
-  src: url('font/Canobis.otf') format("opentype");
+  src: url('../public/static/media/Canobis.otf') format("opentype");
 }
 @font-face{
   font-family: 'BBfont';
-  src: url('font/BBfont.ttf') format("truetype");
+  src: url('../public/static/media/BBfont.ttf') format("truetype");
 }
 @font-face{
   font-family: 'Fairplay';
-  src: url('font/fairplay.ttf') format("truetype");
+  src: url('../public/static/media/fairplay.ttf') format("truetype");
 }
 /* Firefox */
 :root{
