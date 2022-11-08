@@ -59,19 +59,19 @@ const Profile = () =>{
         <div className="card mb-4 mb-lg-0">
           <div className="card-body p-0">
             <ul className="rounded-3">
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
+              <li className="d-flex justify-content-between align-items-center p-3">
                 <i className="bi bi-facebook"></i>
                 <p className="mb-0">Facebook</p>
               </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
+              <li className="d-flex justify-content-between align-items-center p-3">
                 <i className="bi bi-instagram"></i>
                 <p className="mb-0">Instagram</p>
               </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
+              <li className="d-flex justify-content-between align-items-center p-3">
                 <i className="bi bi-linkedin"></i>
                 <p className="mb-0">Linkedin</p>
               </li>
-              <li className="list-group-item d-flex justify-content-between align-items-center p-3">
+              <li className="d-flex justify-content-between align-items-center p-3">
                 <i className="bi bi-whatsapp"></i>
                 <p className="mb-0">WhatsApp</p>
               </li>

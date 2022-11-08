@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Hamish';
   src: url('../public/static/media/Hamish.woff') format('woff'),
-       url('font/Hamish.otf') format("opentype");
+       url('../public/static/media/Hamish.otf') format("opentype");
 }
 @font-face {
   font-family: 'Canobis';
