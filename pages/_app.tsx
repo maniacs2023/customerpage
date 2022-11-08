@@ -29,7 +29,7 @@ useEffect(()=>{
     document.documentElement.style.setProperty('--text-color', '#212529');
     document.documentElement.style.setProperty('--second-bg-color', ' #f0f7ff ');
   }
-},[]);  
+},[cookie.theme]);  
 return (
     <AuthContextProvider>
       <Head>
