@@ -19,14 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 const router = useRouter()
 const cookie = parseCookies()
 useEffect(()=>{
-  if(cookie)
-  {
     if(cookie.theme == 'dark'){
       document.documentElement.style.setProperty('--back-gd-color', '#1f2522');
       document.documentElement.style.setProperty('--text-color', '#cdcdcd');
       document.documentElement.style.setProperty('--second-bg-color', '#222220');
     }
-  }
   else{
     document.documentElement.style.setProperty('--back-gd-color', '#fff');
     document.documentElement.style.setProperty('--text-color', '#212529');
