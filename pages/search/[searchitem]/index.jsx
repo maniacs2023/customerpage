@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
   
-export default function SearchItem(){
+export default function Searchitem(){
    const router = useRouter()
   const searchText  = router.query.searchitem
   return(<>
