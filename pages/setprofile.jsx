@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import {useRouter} from 'next/router'
 import { storage } from "../firebase.js";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import {parseCookies, setCookie} from 'nookies'
+import {parseCookies, setCookie} from 'nookies/dist'
 import { db } from '../firebase.js'
 import { doc, updateDoc } from "firebase/firestore";
 

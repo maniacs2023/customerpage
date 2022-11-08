@@ -1,5 +1,5 @@
 import { useAuth } from '../../context/AuthContext'
-import { parseCookies } from 'nookies'
+import { parseCookies } from 'nookies/dist'
 import Avatar from "@mui/material/Avatar";
 
 export default function UserNav() {

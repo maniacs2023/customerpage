@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import GetGPS from './getgps.jsx'
 import {useRouter} from 'next/router'
-import { parseCookies,setCookie, destroyCookie } from 'nookies'
+import { parseCookies,setCookie, destroyCookie } from 'nookies/dist'
 
 export default function Searchbar() {
   const [gps, setGps] = useState(false)

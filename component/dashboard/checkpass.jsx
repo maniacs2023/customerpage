@@ -2,7 +2,7 @@ import { useState } from "react"
 import { auth } from '../../firebase.js'
 import { db } from '../../firebase.js'
 import { doc, updateDoc } from "firebase/firestore";
-import { parseCookies, setCookie, destroyCookie} from 'nookies'
+import { parseCookies, setCookie, destroyCookie} from 'nookies/dist'
 import {
     EmailAuthProvider,
     getAuth,

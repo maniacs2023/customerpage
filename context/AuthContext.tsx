@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { parseCookies, setCookie, destroyCookie } from 'nookies'
+import { parseCookies, setCookie, destroyCookie } from 'nookies/dist'
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,

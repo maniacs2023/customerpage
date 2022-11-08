@@ -10,7 +10,7 @@ import Navbar from "../component/navbar/navbar.jsx"
 import { AuthContextProvider } from '../context/AuthContext'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react';
-import { parseCookies } from 'nookies'
+import { parseCookies } from 'nookies/dist'
 import ProtectedRoute from '../context/ProtectedRoute'
 
 const noAuthRequired = ['/', '/login', '/signup', '/search']

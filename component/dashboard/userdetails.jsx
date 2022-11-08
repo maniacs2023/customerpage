@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react'
 import { useAuth } from '../../context/AuthContext'
 import { db } from '../../firebase.js'
-import { parseCookies,setCookie} from 'nookies'
+import { parseCookies,setCookie} from 'nookies/dist'
 import CheckPass from './checkpass.jsx'
 const UserDetails = () =>{
   const {user} = useAuth()

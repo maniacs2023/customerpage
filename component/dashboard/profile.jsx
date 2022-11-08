@@ -2,7 +2,7 @@
 import UserDetails from './userdetails.jsx'
 import { useAuth } from '../../context/AuthContext'
 import { useRouter } from 'next/router'
-import { parseCookies} from 'nookies'
+import { parseCookies} from 'nookies/dist'
 import Avatar from "@mui/material/Avatar";
 const Profile = () =>{
   const {user,userdata} = useAuth()
