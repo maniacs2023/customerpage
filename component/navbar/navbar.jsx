@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 import {useState ,useEffect} from 'react';
-import logo from '../../public/favicon.ico';
+import logo from '../../public/icon.png';
+import Image from 'next/image';
 import NavDash from "./navdash.jsx"
 import UserNav from "./usernav.jsx"
 
@@ -98,15 +99,12 @@ a:hover, a:active{
   color: rgb(255, 255, 255) !important;
   background-color:var(--sub-theme-color);
 }
-.navbar-brand{
+.navbar-brand a{
   font-size: calc(0.8vw + 2.5vh);
-  padding: 0 !important;
-  font-family: "BBfont";
+  font-family: "BBfont", Fallback, sans-serif;
+  
 }
-#brand-logo{
-  width: calc(3vh + 0.8vw);
-  padding-bottom: 0.35rem;
-}
+
 .navbar{
   padding: 0 5px 0 5px !important; 
 }
@@ -157,10 +155,16 @@ nav{
         </button>
       </div>
       
-      <div className="p-1">
-        <a className="navbar-brand" onClick={()=>{router.push('/')}}>
-          Maniacs
-        </a>
+      <div className="p-1 navbar-brand d-flex">
+        <div className="nav-logo">
+        <Image 
+          src={logo}
+          alt="logo"
+          width="38"
+          height="35"
+          />
+         </div>
+         <a onClick={()=>{router.push('/')}}>Maniacs</a>
       </div>
       
       {(user==null) ? <NavDash/> : <UserNav/>}     

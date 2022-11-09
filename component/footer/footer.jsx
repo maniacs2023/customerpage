@@ -77,7 +77,7 @@ export default function Footer(){
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
                 2022 Copyright :&nbsp;
-                <a className="text-white" href="https://homepage.maniacscse.repl.co/">Maniacs.com</a>
+                <a className="text-white" href="">Maniacs.com</a>
               </div>
             </div>
             <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
