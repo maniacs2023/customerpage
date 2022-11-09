@@ -33,8 +33,7 @@ export default function Offers(){
   transition: 0.5s ease-in-out;
   opacity:0;
   color: white;
-  font-size: calc(1vw + 0.5vh);
-  padding-top: calc(0.5vw + 0.25vh);
+  font-size: 18px;
   text-align: center;
 }
 .code{
