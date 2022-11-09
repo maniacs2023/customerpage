@@ -37,8 +37,11 @@ export default function Searchbar() {
   
   return (<>
     <style jsx>{`
+      a{
+        color:white !important;
+      }
       a:hover{
-  color: var(--main-theme-color);
+  font-weight: bold;
 }
       #content {
   margin: 0% 15% 0 15%;
