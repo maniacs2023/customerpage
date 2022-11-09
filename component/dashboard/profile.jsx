@@ -50,7 +50,12 @@ const Profile = () =>{
           <div className="card-body text-center">
             <div className="profileimg justify-content-center d-flex">
             <Avatar src={userData.profilepic} sx={{ width: 150, height: 150 }} />
-             </div><div className="profileImgEdit"> <button className="editbtn" onClick={()=>router.push('setprofile')}><i className="bi bi-pencil-square"></i></button></div>
+             </div>
+             <div className="profileImgEdit">
+                <button className="editbtn" onClick={()=>router.push('setprofile')}>
+                  <i className="bi bi-pencil-square"></i>
+                </button>
+              </div>
             
             <p className="text-muted mb-1">{userData.email}</p>
             <p className="text-muted mb-2">{userData.displayName}</p>

@@ -96,9 +96,7 @@ const getCropData = () => {
 
   return (<>
     <style jsx>{`
-      .container{
-        margin-top:60px;
-      }
+      
      .avatar{
     position: relative;
     width:150px;
@@ -144,7 +142,7 @@ const getCropData = () => {
       
 
     `}</style>
-    <div className="container text-center">
+    <div className="container text-center m-top">
       <h2 id="sub-heading">Set your Profile Picture</h2>
       <div className="avatar">
       <Avatar src={cropData!="#"?cropData:userData.profilepic} sx={{ width: 150, height: 150 }} />

@@ -103,17 +103,17 @@ a:hover, a:active{
       <ul className="navbar-nav" id="navbar-nav">
         {user? 
         <>
-        <li className="navitem" onClick={()=>{router.push("dashboard").then( event => DisplaySidenav(false))}}>
+        <li className="navitem" onClick={()=>{router.push("/dashboard").then( event => DisplaySidenav(false))}}>
           <a className="navlink" >
             My Profile
           </a>
         </li>
-        <li className="navitem" onClick={()=>{router.push("booking").then( event => DisplaySidenav(false))}}>
+        <li className="navitem" onClick={()=>{router.push("/bookings").then( event => DisplaySidenav(false))}}>
           <a className="navlink">
             Bookings
           </a>
         </li>
-        <li className="navitem"  onClick={()=>{router.push("setting").then( event => DisplaySidenav(false))}}>
+        <li className="navitem"  onClick={()=>{router.push("/settings").then( event => DisplaySidenav(false))}}>
           <a className="navlink">
             Settings
           </a>
