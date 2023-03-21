@@ -117,7 +117,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Name</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.displayName}</p>
+               <p className=" mb-0">{userData.displayName}</p>
               </div>
              </div>
             <hr/>
@@ -126,7 +126,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Email</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.email}</p>
+               <p className=" mb-0">{userData.email}</p>
               </div>
             </div>
           <hr/>
@@ -135,7 +135,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Password</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">...........</p>
+               <p className=" mb-0">...........</p>
               </div>
           </div>
         
@@ -145,7 +145,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Phone</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.phoneNumber}</p>
+               <p className=" mb-0">{userData.phoneNumber}</p>
               </div>
           </div>
         <hr/>
@@ -154,7 +154,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Alternate Phone No.</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.altPhoneNumber}</p>
+               <p className=" mb-0">{userData.altPhoneNumber}</p>
               </div>
           </div>
           <hr/>
@@ -163,7 +163,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Address</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.address}</p>
+               <p className=" mb-0">{userData.address}</p>
               </div>
           </div>
         
@@ -175,7 +175,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Name</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.displayName}</p>
+               <p className=" mb-0">{userData.displayName}</p>
               </div>
              </div>
             <hr/>
@@ -184,7 +184,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Email</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">{userData.email}</p>
+               <p className=" mb-0">{userData.email}</p>
               </div>
             </div>
           <hr/>
@@ -193,7 +193,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Password</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0">...........</p>
+               <p className=" mb-0">...........</p>
               </div>
           </div>
         <hr/>
@@ -202,7 +202,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Phone</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0"><input className="inputedit" type="text" maxLength="10" value={userPhoneNo} onChange={(e)=>setUserPhoneNo(e.target.value)}/><span className="showokbtn" id="showokbtn1"><button className="editbtn" onClick={()=>{changeValue("phoneNumber",userPhoneNo);setrepass(true)}}><i className="bi bi-check2-square"></i></button></span></p>
+               <p className=" mb-0"><input className="inputedit" type="text" maxLength="10" value={userPhoneNo} onChange={(e)=>setUserPhoneNo(e.target.value)}/><span className="showokbtn" id="showokbtn1"><button className="editbtn" onClick={()=>{changeValue("phoneNumber",userPhoneNo);setrepass(true)}}><i className="bi bi-check2-square"></i></button></span></p>
               </div>
           </div>
         <hr/>
@@ -211,7 +211,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Alternate Phone No.</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0"><input className="inputedit" type="text" maxLength="10" value={userAltphNo} onChange={(e)=>setUserAltphNo(e.target.value)}/><span className="showokbtn" id="showokbtn2"><button className="editbtn" onClick={()=>{changeValue("altPhoneNumber",userAltphNo);setrepass(true)}}><i className="bi bi-check2-square"></i></button></span></p>
+               <p className=" mb-0"><input className="inputedit" type="text" maxLength="10" value={userAltphNo} onChange={(e)=>setUserAltphNo(e.target.value)}/><span className="showokbtn" id="showokbtn2"><button className="editbtn" onClick={()=>{changeValue("altPhoneNumber",userAltphNo);setrepass(true)}}><i className="bi bi-check2-square"></i></button></span></p>
                 
               </div>
           </div>
@@ -221,7 +221,7 @@ function changeValue(t,v){
       	        <p className="mb-0">Address</p>
                 </div>
               <div className="col-sm-9">
-               <p className="text-muted mb-0"><input className="inputedit" type="text" value={userAddress} onChange={(e)=>setUserAddress(e.target.value)}/><span className="showokbtn" id="showokbtn3"><button className="editbtn" onClick={()=>{changeValue("address",userAddress);setrepass(true)}}><i className="bi bi-check2-square"></i></button></span></p>
+               <p className=" mb-0"><input className="inputedit" type="text" value={userAddress} onChange={(e)=>setUserAddress(e.target.value)}/><span className="showokbtn" id="showokbtn3"><button className="editbtn" onClick={()=>{changeValue("address",userAddress);setrepass(true)}}><i className="bi bi-check2-square"></i></button></span></p>
               </div>
           </div>
               </>

@@ -57,8 +57,8 @@ const Profile = () =>{
                 </button>
               </div>
             
-            <p className="text-muted mb-1">{userData.email}</p>
-            <p className="text-muted mb-2">{userData.displayName}</p>
+            <p className=" mb-1">{userData.email}</p>
+            <p className=" mb-2">{userData.displayName}</p>
           </div>
         </div>
         <div className="card mb-4 mb-lg-0">

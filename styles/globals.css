@@ -21,10 +21,10 @@
 :root{
   --main-theme-color: #0067A5;
   --sub-theme-color: #002d39;
-  --light-type-color: #b6c4c9;
-  --text-color: #212529 !important;
+  --light-type-color: #857c7c;
+  --text-color: #1a1616 !important;
   --back-gd-color:#dadadc !important;
-  --second-bg-color: #9a9d9ecf !important;
+  --second-bg-color: #5996aeb7 !important;
 }
 /* .light-mode{
   --text-color: #212529 !important;
