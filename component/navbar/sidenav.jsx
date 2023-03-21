@@ -119,6 +119,22 @@ a:hover, a:active{
           </a>
         </li>
           <hr/>
+          <li className="navitem" onClick={()=>{router.push("/").then( event => DisplaySidenav(false))}}>
+          <a className="navlink" >
+            Home
+          </a>
+        </li>
+        <li className="navitem" onClick={()=>{router.push("/about").then( event => DisplaySidenav(false))}}>
+          <a className="navlink" >
+            About Us
+          </a>
+        </li>
+        <li className="navitem" onClick={()=>{router.push("/description").then( event => DisplaySidenav(false))}}>
+          <a className="navlink" >
+            Our Company
+          </a>
+        </li>
+        <hr/>
         <li className="navitem">
           <a className="navlink" onClick={() => {setUserLogout(true)}}>
             Logout
@@ -161,6 +177,22 @@ a:hover, a:active{
         <li className="navitem">
           <a className="navlink" href="https://coordinatorpage.maniacscse.repl.co/">
             Coordinator
+          </a>
+        </li>
+        <hr/>
+        <li className="navitem" onClick={()=>{router.push("/").then( event => DisplaySidenav(false))}}>
+          <a className="navlink" >
+            Home
+          </a>
+        </li>
+        <li className="navitem" onClick={()=>{router.push("/about").then( event => DisplaySidenav(false))}}>
+          <a className="navlink" >
+            About Us
+          </a>
+        </li>
+        <li className="navitem" onClick={()=>{router.push("/description").then( event => DisplaySidenav(false))}}>
+          <a className="navlink" >
+            Our Company
           </a>
         </li>
         <div className="navbar-footer">

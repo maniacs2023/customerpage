@@ -1,6 +1,5 @@
-import Image from "next/image"
-import Cancel from "../../public/avatar/cancel.png"
 import Avatar from "@mui/material/Avatar";
+import Statusicon from "./statusicon.jsx";
 const Booklist =() =>{
     return(<>
     <style jsx>{`
@@ -18,13 +17,6 @@ const Booklist =() =>{
         background-color: var(--second-bg-color); 
         color: var(--text-color);
     }
-    .image-container{
-        margin-left:10px;
-        border-radius: 50%;
-        margin-left: 2vw;
-        width: 56px;
-        height: 56px;
-    }
     #status{
         position:absolute;
         top:0;
@@ -32,6 +24,7 @@ const Booklist =() =>{
         width:auto;
         padding-right: 2vw;
     }
+    
     `}</style>
     <div className="container text-center m-top">
       <h2 id="sub-heading">Your Booking List</h2>
@@ -61,50 +54,41 @@ const Booklist =() =>{
             </div>
         </div>
         <div className="mx-auto mb-3 col-12 col-sm-10 col-md-8 col-xl-8 col backgd">
-            <div className="card mb-3">
-                <div className="card-body theme-color"> {/* Ongoing */}
-                    <div className="image-container">
-                        <Avatar src="/avatar/cancel.png" sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
-                    </div>
+            {
+            <div className="mb-3 card">
+                <div className="card-body row theme-color"> {/* Ongoing */}
                     
-                        <div id="status" className="col-12 col-sm-12 col-md-12 col-xl-12 col-xl-12">
-                            Status
-                        </div>
-                  
-                    <div className="container row card-body ">
-                        <div id="typename" className="col-12 col-sm-6 col-md-4 col-xl-4 col-xl-4">
-                            Class
-                        </div>
-                        <div id="fullname" className="col-12 col-sm-6 col-md-4 col-xl-4 col-xl-4">
-                            Name Surname
-                        </div>
-                        <div className="col-12 col-sm-6 col-md-4 col-xl-4 col-xl-4">
-                            
-                        </div>
+                    <div className="col-3 col-md-2">
+                    <div className="image-container">
+                        <Avatar src="/avatar/cancel.png" sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
                     </div>
+                    </div>
+                    <div className="col-9 col-md-10 row">
+                        <div id="status" className="status ">
+                            <Statusicon status={"ongoing"}/>&nbsp;Status
+                        </div>
+                        <div id="typename" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>Type:</b> Plumber
+                        </div>
+                        <div id="fullname" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>Date:</b> 11/11/22
+                        </div>
+                        <div id="statusupdate" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>Ongoing</b>
+                        </div>
+                        <div id="typename" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>Name:</b> John Milter
+                        </div>
+                        <div id="fullname" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>Time:</b>10:00AM onwards
+                        </div>
+                        <div id="billamount" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>Bill:</b>  0.00 Rs
+                        </div>
+                    </div>  
                 </div>
             </div>
-            <div className="card mb-3">
-                <div className="card-body theme-color"> {/* Upcomming */}
-                    <div className="image-container">
-                        <Avatar src="/avatar/cancel.png" sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
-                    </div> 
-                </div>
-            </div>
-            <div className="card mb-3">
-                <div className="card-body theme-color"> {/* Previous */}
-                    <div className="image-container">
-                        <Avatar src="/avatar/cancel.png" sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
-                    </div> 
-                </div>
-            </div>
-            <div className="card mb-3">
-                <div className="card-body theme-color"> {/* Cancelled */}
-                    <div className="image-container">
-                        <Avatar src="/avatar/cancel.png" sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
-                    </div> 
-                </div>
-            </div>
+            }
         </div>
         </div>
     </div>

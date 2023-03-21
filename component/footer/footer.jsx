@@ -76,7 +76,7 @@ export default function Footer(){
           <div className="row d-flex align-items-center">
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
-                2022 Copyright :&nbsp;
+                2022<i className="bi bi-c-circle" style={{"position":"relative","fontSize":"8px","bottom":"2ex"}}></i>&nbsp;Copyright :&nbsp;
                 <a className="text-white" href="">Maniacs.com</a>
               </div>
             </div>

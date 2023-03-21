@@ -13,20 +13,24 @@ const Theme = () =>{
     });
     const handleChange = (e) =>
     {
+        const body = document.getElementsByTagName('body')[0]
         let checkbox = document.getElementById("switch");
          if ( checkbox.checked ) {
-            document.documentElement.style.setProperty('--back-gd-color', '#1f2522');
-            document.documentElement.style.setProperty('--text-color', '#cdcdcd');
-            document.documentElement.style.setProperty('--second-bg-color', '#222220');
-                setCookie(null,'theme','dark',
+            // document.documentElement.style.setProperty('--back-gd-color', '#1f2522');
+            // document.documentElement.style.setProperty('--text-color', '#cdcdcd');
+            // document.documentElement.style.setProperty('--second-bg-color', '#222220');
+            body.classList.add('dark-mode')
+           
+            setCookie(null,'theme','dark',
             {secure:true,maxAge: 30 * 24 * 60 * 60 * 60 * 365,sameSite: "strict"})
           
             document.getElementById("themename").innerHTML="DARK"
         } else {
-            document.documentElement.style.setProperty('--back-gd-color', '#fff');
-            document.documentElement.style.setProperty('--text-color', '#212529');
-            document.documentElement.style.setProperty('--second-bg-color', ' #f0f7ff ');
-                setCookie(null,'theme','light',
+            // document.documentElement.style.setProperty('--back-gd-color', '#fff');
+            // document.documentElement.style.setProperty('--text-color', '#212529');
+            // document.documentElement.style.setProperty('--second-bg-color', ' #f0f7ff ');
+            body.classList.remove('dark-mode')
+            setCookie(null,'theme','light',
             {secure:true,maxAge: 30 * 24 * 60 * 60 * 60 * 365,sameSite: "strict"})
            
             document.getElementById("themename").innerHTML="LIGHT"
