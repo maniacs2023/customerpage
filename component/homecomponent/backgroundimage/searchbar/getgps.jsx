@@ -1,3 +1,4 @@
+import { setCookie } from "nookies";
 const GetGPS = function({setgpslocation}){
   const getGPSLocation = () =>{
     if (navigator.geolocation) {
@@ -7,7 +8,8 @@ const GetGPS = function({setgpslocation}){
   }
   }
 function showPosition(position) {
-  var inputGPS = document.getElementById("locationinput")
+  var inputGPS = document.getElementById("locationinput");
+    
     inputGPS.value = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
 }

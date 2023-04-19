@@ -6,6 +6,7 @@ import { parseCookies,setCookie, destroyCookie } from 'nookies/dist'
 
 export default function Searchbar() {
   const [gps, setGps] = useState(false)
+  const [searchTerm, setSearchTerm] = useState("");
   const cookie = parseCookies()
   const router = useRouter()
   useEffect(()=>{
@@ -21,6 +22,12 @@ export default function Searchbar() {
   }
 
   function Searchmenu(e){
+    if(router.pathname == "/search")
+    {
+      setSearchTerm(e);
+      console.log(searchTerm);
+      destroyCookie(null, "searchitem")
+    }
     if(e!=null && router.pathname == "/"){
       setCookie(null, "searchitem", e,
                   {secure:true,sameSite: "lax"})
@@ -29,12 +36,12 @@ export default function Searchbar() {
     if(e==null || e=="" && router.pathname == "/search"){
        router.push('/')
     }
-    if(router.pathname == "/search")
-    {
-      destroyCookie(null, "searchitem")
-    }
+    
   }
-  
+  const handleSearch = (event) => {
+    event.preventDefault();
+    router.push(`/search/${searchTerm}`);
+  };
   return (<>
     <style jsx>{`
       a{
@@ -116,7 +123,7 @@ export default function Searchbar() {
     </div>
     <div className="container pb-5" id="contain">
       <div id="content" className="search-bar">
-        <form className='form-inline'>
+        <form className='form-inline' onSubmit={handleSearch}>
           <div className="input-group">
             <input type='text' id='search' className="search-form" placeholder="Type here to search...."
               autoComplete="off" onChange={(e) =>Searchmenu(e.target.value)}/>

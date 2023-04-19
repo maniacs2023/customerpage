@@ -1,5 +1,5 @@
 const Statusicon = (prop) =>{
-    const color= (prop.status=="ongoing")?"yellow":(prop.status=="upcoming")?"lime":(prop.status=="cancelled")?"red":(prop.status=="previous")?"yellow":"grey"
+    const color= (prop.status=="ongoing")?"green":(prop.status=="upcoming")?"yellow":(prop.status=="cancelled")?"red":(prop.status=="previous")?"yellow":"grey"
     const dot = {
         "height": "9px",
         "width": "9px",
