@@ -106,7 +106,7 @@ const WorkersPage = () => {
             <div className="col"><label className="textvalue">{u.name}</label></div>
           </div>
           <div className="row" id="item-row">
-            <div className="col"><label className="title">Proffesion</label></div>
+            <div className="col"><label className="title">Profession</label></div>
             <div className="col"><label className="textvalue">{u.profession}</label></div>
           </div>
           <div className="row" id="item-row">

@@ -1,26 +1,46 @@
 import Avatar from "@mui/material/Avatar";
 import Statusicon from "./statusicon.jsx";
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, where, query, orderBy } from 'firebase/firestore';
 
 
 import { useState,useEffect } from "react";
 import { parseCookies } from "nookies";
 const Booklist =() =>{
     const [bookings, setBookings] = useState([]);
+    const [filteredBookings,setFilteredBookings] = useState([]);
     const cookies = parseCookies();
     const uId = cookies.id;
 useEffect(() => {
   const getBookings = async () => {
     const db = getFirestore();
-    const bookingsRef = collection(db, 'booking');
-    const snapshot = await getDocs(bookingsRef);
+    const bookingsRef = collection(db, 'booking')
+
+    const q = query(bookingsRef, where('cId', '==', uId), orderBy("timestamp", "desc"));
+    const snapshot = await getDocs(q);
     const bookings = snapshot.docs
-      .map((doc) => ({ id: doc.id, ...doc.data() }))
-      .filter((booking) => booking.cId === uId);
+      .map((doc) => ({ id: doc.id, ...doc.data() }));
     return bookings;
   }
-  getBookings().then((bookings) => setBookings(bookings));
+  getBookings().then((b) => {setBookings(b);setFilteredBookings(b)});
 }, []);
+function handleClickForCategory(status) {
+    let switcher = document.getElementById('category' + status.charAt(0).toUpperCase() + status.slice(1));
+    let switchoff = document.getElementsByClassName('active');
+
+    if (!switcher.classList.contains('active')) {
+        Array.from(switchoff).forEach(element => {
+            element.classList.toggle('active');
+        });
+        switcher.classList.toggle('active');
+    }
+    if(status === 'all'){
+        setFilteredBookings(bookings);
+    }
+    else{
+        const updatingBookings = bookings.filter(booking => booking.status === status);
+        setFilteredBookings(updatingBookings);
+    }
+}
     return(<>
     <style jsx>{`
     a{
@@ -44,7 +64,12 @@ useEffect(() => {
         width:auto;
         padding-right: 2vw;
     }
-    
+    .active{
+        color: black;
+    }
+    .inactive{
+        color: grey;
+    }
     `}</style>
     <div className="container text-center m-top">
       <h2 id="sub-heading">Your Booking List</h2>
@@ -56,27 +81,32 @@ useEffect(() => {
                 
                 <div className="card-body theme-color">
                     <div className="row">
-                        <a className="active">All</a>
+                        <a className="active" id="categoryAll" 
+                        onClick={() => handleClickForCategory('all')}>All</a>
                     </div>
                     <div className="row">
-                        <a>Ongoing</a>
+                        <a className="" id="categoryOngoing" 
+                        onClick={() => handleClickForCategory('ongoing')}>Ongoing</a>
                     </div>
                     <div className="row">
-                        <a>Upcoming</a>                         
+                        <a className="" id="categoryUpcoming" 
+                        onClick={() => handleClickForCategory('upcoming')}>Upcoming</a>                         
                     </div>
                     <div className="row">
-                        <a>Previous</a>
+                        <a className="" id="categoryPrevious" 
+                        onClick={() => handleClickForCategory('previous')}>Previous</a>
                     </div>
                     <div className="row">
-                        <a>Cancelled</a>
+                        <a className="" id="categoryCancelled" 
+                        onClick={() => handleClickForCategory('cancelled')}>Cancelled</a>
                     </div>
                 </div>
             </div>
         </div>
         <div className="mx-auto mb-3 col-12 col-sm-10 col-md-8 col-xl-8 col backgd">
-        {bookings.map(u=>       
+        {filteredBookings.map(u=>       
             <div key={u.id} className="mb-3 card">
-                <div className="card-body row theme-color"> {/* Ongoing */}
+                <div className="card-body row theme-color"> 
                     
                     <div className="col-3 col-md-2">
                     <div className="image-container">
@@ -85,7 +115,7 @@ useEffect(() => {
                     </div>
                     
                     <div className="col-9 col-md-10 row">
-                        <div id="status" className="status ">
+                        <div id="status" className="status">
                             <Statusicon status={u.status}/>&nbsp;Status
                         </div>
                         <div id="typename" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
@@ -124,3 +154,4 @@ useEffect(() => {
     </>)
 }
 export default Booklist
+
