@@ -70,6 +70,22 @@ function handleClickForCategory(status) {
     .inactive{
         color: grey;
     }
+    #eachItem {
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideIn 0.5s ease-in-out;
+      }
+      
+      @keyframes slideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     `}</style>
     <div className="container text-center m-top">
       <h2 id="sub-heading">Your Booking List</h2>
@@ -78,7 +94,6 @@ function handleClickForCategory(status) {
         <div className="row">
         <div className="mx-auto mb-3 col-12 col-sm-10 col-md-3 col-xl-3 col-lg-3">
             <div className="card">
-                
                 <div className="card-body theme-color">
                     <div className="row">
                         <a className="active" id="categoryAll" 
@@ -105,7 +120,7 @@ function handleClickForCategory(status) {
         </div>
         <div className="mx-auto mb-3 col-12 col-sm-10 col-md-8 col-xl-8 col backgd">
         {filteredBookings.map(u=>       
-            <div key={u.id} className="mb-3 card">
+            <div id="eachItem" key={u.id} className="mb-3 card">
                 <div className="card-body row theme-color"> 
                     
                     <div className="col-3 col-md-2">
