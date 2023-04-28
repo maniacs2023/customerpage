@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { db } from "../../../../firebase.js";
 import { doc, getDoc, addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { parseCookies } from "nookies";
-import Sms from "../../../../component/sendemailsms/sms.jsx";
 
 const WorkerDetailsPage = () => {
   const router = useRouter();
