@@ -9,9 +9,23 @@
     transform: translate(0,-50%);
   }
   
-  .text {
+  .textR {
     margin-left: 50px;
   }
+  @media only screen and (max-width: 600px) {
+  .textR{
+    margin-left: 0;
+  }
+}
+.textL {
+  margin-right: 50px;
+}
+@media only screen and (max-width: 600px) {
+.textL{
+  margin-right: 0;
+}
+}
+
   
   .heading {
     font-family: "Fairplay",Fallback,sans-serif;

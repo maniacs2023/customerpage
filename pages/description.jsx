@@ -28,7 +28,7 @@ export default function Description() {
           <img src="/img/description-img.jpg" alt="Description Image" className={styles.img} />
         </Col>
         <Col md={6}>
-          <div className={styles.text}>
+          <div className={styles.textR}>
             
             <p className={styles.paragraph}>We are a company that specializes in creating innovative and user-friendly websites. Our team is made up of talented designers, developers, and marketers who are passionate about helping businesses and individuals establish a strong online presence.</p>
             <p className={styles.paragraph}>We believe that a website is more than just an online presence. It is a tool that can help businesses grow and connect with their audience. That's why we work closely with our clients to create websites that are tailored to their needs and goals.</p>
@@ -39,7 +39,7 @@ export default function Description() {
       <Row>
       <h1 className="subHeading" id="sub-heading">Our Company</h1>
         <Col md={6}>
-          <div className={styles.text}>
+          <div className={styles.textL}>
             <p className={styles.paragraph}>We are a company that specializes in creating innovative and user-friendly websites. Our team is made up of talented designers, developers, and marketers who are passionate about helping businesses and individuals establish a strong online presence.</p>
             <p className={styles.paragraph}>We believe that a website is more than just an online presence. It is a tool that can help businesses grow and connect with their audience. That's why we work closely with our clients to create websites that are tailored to their needs and goals.</p>
             <p className={styles.paragraph}>Whether you're a small business owner or a large corporation, we can help you achieve your online goals. Contact us today to learn more about our services and how we can help you succeed online.</p>
@@ -55,7 +55,7 @@ export default function Description() {
           <img src="/img/description-img.jpg" alt="Description Image" className={styles.img} />
         </Col>
         <Col md={6}>
-          <div className={styles.text}>
+          <div className={styles.textR}>
             <p className={styles.paragraph}>We are a company that specializes in creating innovative and user-friendly websites. Our team is made up of talented designers, developers, and marketers who are passionate about helping businesses and individuals establish a strong online presence.</p>
             <p className={styles.paragraph}>We believe that a website is more than just an online presence. It is a tool that can help businesses grow and connect with their audience. That's why we work closely with our clients to create websites that are tailored to their needs and goals.</p>
             <p className={styles.paragraph}>Whether you're a small business owner or a large corporation, we can help you achieve your online goals. Contact us today to learn more about our services and how we can help you succeed online.</p>
