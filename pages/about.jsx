@@ -32,7 +32,7 @@ export default function About() {
           <div className={styles.member}>
             <img src="/img/members/team-member-4.jpg" alt="Team Member 3" />
             <h2>Arnab Barman</h2>
-            <p>Helper</p>
+            <p>Sponsor</p>
           </div>
         </Col>
         <Col md={4}>
@@ -48,7 +48,7 @@ export default function About() {
           <div className={styles.member}>
             <img src="/img/members/team-member-5.jpg" alt="Team Member 3" />
             <h2>Arunit Ghosh</h2>
-            <p>Assistant Helper</p>
+            <p>Data Entry</p>
           </div>
         </Col>
         

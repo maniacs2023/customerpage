@@ -62,6 +62,9 @@ const WorkersPage = () => {
     font-weight: bold;
     text-align: center;
   }
+  .title{
+    margin:0 1vw;
+  }
   label{
     font-size: calc(1.5vh + 0.15vw)
   }
@@ -87,7 +90,11 @@ const WorkersPage = () => {
   #searchText{
     text-align: center;
     font-size: 26px;
+    
     font-weight: bold;
+  }
+  #searchText,.title,.textvalue{
+    color: var(--text-color);
   }
     `}</style>
     <div id="searchText" className="m-auto mt-5"><p>You Have Search For : {searchitem}</p></div>

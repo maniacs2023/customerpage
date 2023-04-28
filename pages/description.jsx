@@ -20,8 +20,8 @@ export default function Description() {
     <div className={styles.container}>
       <div className={`${styles.content} ${isExpanded ? styles.expanded : ''}`}>
         <h1 className={styles.heading}>Welcome to our website!</h1>
-        <p className={styles.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel libero ut elit vehicula faucibus at quis mi. Vestibulum maximus, lorem vitae feugiat mollis, lorem lacus semper nisl, a sodales lacus sapien id risus.</p>
-        <p className={styles.paragraph}>Nam vitae felis tellus. Fusce condimentum nibh vitae elit venenatis, at tempor arcu sagittis. Morbi molestie rutrum felis, sit amet bibendum mi pulvinar vitae. Nam sodales, augue nec viverra dictum, purus nisi posuere dolor, vel lacinia lectus nibh sed tellus.</p>
+        <p className={styles.paragraph}>We take pride in our system's transparency and accountability. Our system allows customers to rate workers based on their experience, which helps other customers make informed decisions when choosing a worker. This rating system also motivates workers to provide excellent service, as it directly affects their chances of getting hired again.</p>
+        <p className={styles.paragraph}>In summary, our company is committed to providing a reliable and affordable home service system that connects customers with skilled workers in their local area. We believe our system will make it easier for customers to find reliable workers for all their home service needs.</p>
         <Row>
         <h1 className={styles.subHeading} id="sub-heading">Our Company</h1>
         <Col md={6}>
@@ -32,19 +32,17 @@ export default function Description() {
         <Col md={6}>
           <div className={styles.textR}>
             
-            <p className={styles.paragraph}>We are a company that specializes in creating innovative and user-friendly websites. Our team is made up of talented designers, developers, and marketers who are passionate about helping businesses and individuals establish a strong online presence.</p>
-            <p className={styles.paragraph}>We believe that a website is more than just an online presence. It is a tool that can help businesses grow and connect with their audience. That's why we work closely with our clients to create websites that are tailored to their needs and goals.</p>
-            <p className={styles.paragraph}>Whether you're a small business owner or a large corporation, we can help you achieve your online goals. Contact us today to learn more about our services and how we can help you succeed online.</p>
+            <p className={styles.paragraph}>Our team is passionate about creating a platform that empowers both customers and workers. We believe in the importance of supporting the local economy and providing fair opportunities for skilled workers. Our system is built on a foundation of transparency, accountability, and reliability.</p>
+            <p className={styles.paragraph}>Through our platform, customers can easily browse and hire workers for a variety of services. Whether it's a plumbing emergency or a need for a skilled carpenter, our system makes it easy to find the right person for the job. Workers can showcase their skills and build their reputation through our rating system, giving them a chance to earn a fair wage and expand their business.</p>
           </div>
         </Col>
       </Row>
       <Row>
-      <h1 className={styles.subHeading} id="sub-heading">Our Company</h1>
+      <h1 className={styles.subHeading} id="sub-heading">Our Services</h1>
         <Col md={6}>
           <div className={styles.textL}>
-            <p className={styles.paragraph}>We are a company that specializes in creating innovative and user-friendly websites. Our team is made up of talented designers, developers, and marketers who are passionate about helping businesses and individuals establish a strong online presence.</p>
-            <p className={styles.paragraph}>We believe that a website is more than just an online presence. It is a tool that can help businesses grow and connect with their audience. That's why we work closely with our clients to create websites that are tailored to their needs and goals.</p>
-            <p className={styles.paragraph}>Whether you're a small business owner or a large corporation, we can help you achieve your online goals. Contact us today to learn more about our services and how we can help you succeed online.</p>
+            <p className={styles.paragraph}>Customers can browse a wide range of daily wage workers, including plumbers, mechanics, laborers, carpenters, housemaids, and more. Our site offers a filtering feature for areas, ratings, and prices, making it easy for customers to hire the perfect worker for their needs.</p>
+            <p className={styles.paragraph}>Our home service system is unique in that we focus on connecting customers with local workers. This allows for more personalized service and supports the local economy. Our team has spent countless hours designing and testing our system to ensure that it is user-friendly and reliable. We understand the importance of quality service and strive to provide the best possible experience for our customers.</p>
           </div>
         </Col>
         <Col md={6}>
@@ -54,7 +52,7 @@ export default function Description() {
         </Col>
       </Row>
       <Row>
-      <h1 className={styles.subHeading} id="sub-heading">Our Company</h1>
+      <h1 className={styles.subHeading} id="sub-heading">Our Future</h1>
         <Col md={6}>
           <div className={styles.imageContainer}>
             <img src="/img/description-img.jpg" alt="Description Image" className={styles.img} />
@@ -62,9 +60,8 @@ export default function Description() {
         </Col>
         <Col md={6}>
           <div className={styles.textR}>
-            <p className={styles.paragraph}>We are a company that specializes in creating innovative and user-friendly websites. Our team is made up of talented designers, developers, and marketers who are passionate about helping businesses and individuals establish a strong online presence.</p>
-            <p className={styles.paragraph}>We believe that a website is more than just an online presence. It is a tool that can help businesses grow and connect with their audience. That's why we work closely with our clients to create websites that are tailored to their needs and goals.</p>
-            <p className={styles.paragraph}>Whether you're a small business owner or a large corporation, we can help you achieve your online goals. Contact us today to learn more about our services and how we can help you succeed online.</p>
+            <p className={styles.paragraph}>We are committed to continuously improving our system based on customer feedback and market demand. Our ultimate goal is to become the go-to platform for home services, providing reliable and affordable service to customers across the country. We are excited to be on this journey and look forward to serving our customers and workers for years to come.</p>
+            <p className={styles.paragraph}>Our platform is not only beneficial for customers but also for the workers. We believe that everyone deserves a fair chance to earn a living, and our system allows for workers to showcase their skills and connect with potential customers. Our system provides a level playing field for all workers, regardless of their background, and allows them to compete based on their skills and ratings.</p>
           </div>
         </Col>
       </Row>
