@@ -67,7 +67,7 @@ export default function Description() {
     </div>
     {!(router.pathname=='/description') &&
         <div className={`${!isExpanded ? styles.transbg : styles.notransbg}`}>
-            <button className={styles.button} onClick={toggleExpansion}>{isExpanded ? 'Read Less' : 'Read More'}</button>
+            <button className={styles.button} onClick={toggleExpansion}><i className={isExpanded ? "bi bi-caret-up-fill" : "bi bi-caret-down-fill"}></i> {isExpanded ? 'Read Less' : 'Read More'}</button>
         </div>    
     } 
     

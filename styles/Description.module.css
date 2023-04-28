@@ -67,8 +67,8 @@
   .button {
     padding: 10px 20px;
     border-radius: 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: transparent;
+    color: var(--text-color);
     position: absolute;
     bottom: 0;
     left:50%;
@@ -81,7 +81,7 @@
   }
   
   .button:hover {
-    background-color: #0069d9;
+    color: var(--main-theme-color);
   }
   .subHeading{
     text-align: center;

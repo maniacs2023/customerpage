@@ -9,31 +9,37 @@ import Footer from "../component/footer/footer.jsx"
 import Navbar from "../component/navbar/navbar.jsx"
 import { AuthContextProvider } from '../context/AuthContext'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { parseCookies } from 'nookies/dist'
 import ProtectedRoute from '../context/ProtectedRoute'
+import Loading from '../component/loading/loading'
+
 
 const noAuthRequired = ['/', '/login', '/signup', '/search', '/about', '/description']
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+const [loading, setLoading] = useState(true);
+useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000); // Simulate a 2 second loading time
+    return () => clearTimeout(timer);
+  }, []);
+
 const router = useRouter()
 const cookie = parseCookies()
 useEffect(()=>{
   const body = document.getElementsByTagName('body')[0]
     if(cookie.theme == 'dark'){
       body.classList.add('dark-mode')
-      // document.documentElement.style.setProperty('--back-gd-color', '#1f2522');
-      // document.documentElement.style.setProperty('--text-color', '#cdcdcd');
-      // document.documentElement.style.setProperty('--second-bg-color', '#222220');
     }
   else{
     body.classList.remove('dark-mode')
-    // document.documentElement.style.setProperty('--back-gd-color', '#fff');
-    // document.documentElement.style.setProperty('--text-color', '#212529');
-    // document.documentElement.style.setProperty('--second-bg-color', ' #f0f7ff ');
   }
 },[]);  
 return (
+  <>{loading ? <Loading /> : 
     <AuthContextProvider>
       <Head>
         <title>Miniacs</title>
@@ -50,7 +56,7 @@ return (
         </ProtectedRoute>
       )}
       <Footer/>
-    </AuthContextProvider>
+    </AuthContextProvider>}</>
   )
 }
 export default MyApp
