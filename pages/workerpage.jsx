@@ -102,6 +102,7 @@ function WorkerPage() {
         setCountry("");
         setAge("");
         setStar("");
+        setCropData("#");
     } catch (error) {
       customAlert(error.message,"error")
     }
@@ -231,7 +232,7 @@ const getCropData = () => {
      <h2 id="sub-heading" className='sub-heading text-center'>Add Demo Workers</h2>
 
        <div className="avatar">
-       <Avatar src={cropData!="#"?cropData:"https://dummyimage.com/400x400/9c8c9c/080808&text=profile+pic"} sx={{ width: 150, height: 150 }} />
+       <Avatar src={cropData!="#"?cropData:"https://dummyimage.com/400x400/9c8c9c/080808&text=add+a+pic"} sx={{ width: 150, height: 150 }} />
        </div>
        
        <input type="file" id="browserimage" style={{"display":"none"}} accept="image/png, image/jpg, image/webp, image/jpeg" onChange={handleImageChange} />
