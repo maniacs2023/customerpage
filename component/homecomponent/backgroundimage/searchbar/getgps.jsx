@@ -1,10 +1,11 @@
 import { setCookie } from "nookies";
+import customAlert from "../../../customalert"
 const GetGPS = function({setgpslocation}){
   const getGPSLocation = () =>{
     if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    alert("turn on GPS")
+    customAlert("turn on GPS","warning")
   }
   }
 function showPosition(position) {

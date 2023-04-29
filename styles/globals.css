@@ -105,3 +105,6 @@ body{
 .m-top{
   margin-top:60px;
 }
+.custom-alert{
+  background-color: var(--back-gd-color);
+}

@@ -14,6 +14,8 @@ import { parseCookies } from 'nookies/dist'
 import ProtectedRoute from '../context/ProtectedRoute'
 import Loading from '../component/loading/loading'
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const noAuthRequired = ['/', '/login', '/signup', '/search', '/about', '/description']
 
@@ -49,10 +51,10 @@ return (
       
       <Navbar/>
       {noAuthRequired.includes(router.pathname) ? (
-        <div className="main"><Component {...pageProps} /></div>
+        <div className="main"><ToastContainer /><Component {...pageProps} /></div>
       ) : (
         <ProtectedRoute>
-          <div className="main"><Component {...pageProps} /></div>
+          <div className="main"><ToastContainer /><Component {...pageProps} /></div>
         </ProtectedRoute>
       )}
       <Footer/>

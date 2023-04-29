@@ -10,6 +10,8 @@ import { auth } from '../firebase'
 import { db } from '../firebase.js'
 import { doc, getDoc } from "firebase/firestore";
 import { updateProfile } from '@firebase/auth'
+import customAlert from '../component/customalert'
+import { error } from 'console'
 const AuthContext = createContext<any>({})
 
 export const useAuth = () => useContext(AuthContext)
@@ -56,13 +58,13 @@ export const AuthContextProvider = ({
 
   const signup = (email: string, password: string) => {
     return createUserWithEmailAndPassword(auth, email, password).catch(
-        (err) => console.log(err)
+        (err) => customAlert(err.message,"error")
       );
   }
 
   const login = (email: string, password: string) => {
     return signInWithEmailAndPassword(auth, email, password).catch(
-        (err) => console.log(err)
+        (err) => customAlert(err.message,"error")
       );
   }
 
@@ -74,6 +76,7 @@ export const AuthContextProvider = ({
       destroyCookie(null, e[0])
     });
     await signOut(auth)
+    customAlert("logged out","warning");
   }
   const dataset = (uid: string) => {
     getDoc(doc(db, "customer", uid)).then(docSnap => {

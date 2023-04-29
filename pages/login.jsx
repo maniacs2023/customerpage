@@ -1,3 +1,4 @@
+import customAlert from "../component/customalert";
 import { useRouter } from "next/router";
 import {useState} from 'react';
 import Forgotpass from "../component/forgotpassword/forgotpass.jsx"
@@ -28,10 +29,10 @@ const Login = function() {
     try {
       const logindone = await login(data.email, data.password)
       await dataset(logindone.user.uid)
-      alert("logged")
+      customAlert("logged","success")
       router.push('/')
     } catch (err) {
-      alert(err)
+      // s
     }
   }
   function showPassword(){

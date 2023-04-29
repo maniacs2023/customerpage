@@ -1,3 +1,5 @@
+import customAlert from "../customalert";
+
 import { useState } from "react"
 import { auth } from '../../firebase.js'
 import { db } from '../../firebase.js'
@@ -35,7 +37,7 @@ const CheckPass = function({setrepass}) {
                        }
         console.log(dataSet)
          await updateDoc(doc(db, "customer", userData.id), {...dataSet}).then(function(){
-           alert("success")
+           customAlert("successfully Added", "success");
          })
         setrepass(false)
       })

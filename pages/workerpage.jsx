@@ -1,9 +1,11 @@
+import customAlert from '../component/customalert';
 import { useState,useEffect, useRef} from 'react';
 import {db} from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 
 function WorkerPage() {
   const [typeArray,setTypeArray] = useState([]);
+  const [ratingArray,setRatingArray] = useState([]);
   const [name, setName] = useState('');
   const [profession, setProfession] = useState('');
   const [email, setEmail] = useState('');
@@ -14,21 +16,29 @@ function WorkerPage() {
   const [state, setState] = useState('');
   const [country, setCountry] = useState('');
   const [age, setAge] = useState('');
+  const [star,setStar] = useState('');
   const [availability,setAvailability] = useState('Yes');
   useEffect(()=>{
     const fetchdata = () =>{
       const typeList = require("../component/homecomponent/json/categoriesJson.js")
       const temptypeArray = typeList.map((item) => item.type);
       setTypeArray([...temptypeArray]);
+      setRatingArray([1,1.5,2,2.5,3,3.5,4,4.5,5]);
     }
     fetchdata();
   },[])
   const handleOptionChange = (event) => {
     setProfession(event.target.value);
   };
+  const handleOptionChangeForStar = (event) =>{
+    setStar(event.target.value);
+  }
+  const handleAnswerChange = (event) => {
+    setAvailability(event.target.value);
+  };
   async function handleSubmit(event) {
     event.preventDefault();
-    setAvailability('Yes');
+   
     try {
       await addDoc(collection(db, "worker"), {
         name,
@@ -42,8 +52,21 @@ function WorkerPage() {
         state,
         country,
         age,
+        star,
       });
-      console.log("Worker added successfully");
+      customAlert("Worker added successfully");
+        setName("");
+        setProfession("");
+        setEmail("");
+        setAvailability("");
+        setPhone("");
+        setAddress1("");
+        setAddress2("");
+        setPincode("");
+        setState("");
+        setCountry("");
+        setAge("");
+        setStar("");
     } catch (error) {
       console.error("Error adding worker:", error);
     }
@@ -51,6 +74,7 @@ function WorkerPage() {
 
   return (
     <div className="container mt-5">
+      <h2 id="sub-heading" className='sub-heading text-center'>Add Demo Workers</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -59,7 +83,7 @@ function WorkerPage() {
         <div className="form-group">
           <label htmlFor="profession">Profession:</label>
           <select className="form-control" id="profession" value={profession} onChange={handleOptionChange}>
-            <option value="">Select an option</option>
+            <option value="" disabled>Select an option</option>
             {typeArray.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -99,6 +123,40 @@ function WorkerPage() {
           <label htmlFor="age">Age:</label>
           <input type="text" className="form-control" id="age" value={age} onChange={(event) => setAge(event.target.value)} />
         </div>
+        <div className="form-group">
+          <label htmlFor="star">Rating:</label>
+          <select className="form-control" id="rating" value={star} onChange={handleOptionChangeForStar}>
+            <option value="" disabled>Select an option</option>
+            {ratingArray.map((rating) => (
+              <option key={rating} value={rating}>
+                {rating} STAR
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mt-3 form-group">
+      <label>Are you Available?</label>
+      <div>
+        <label className='m-2'>
+          <input
+            type="radio"
+            value="Yes"
+            checked={availability === 'Yes'}
+            onChange={handleAnswerChange}
+          />
+          Yes
+        </label>
+        <label className='m-2'>
+          <input
+            type="radio"
+            value="No"
+            checked={availability === 'No'}
+            onChange={handleAnswerChange}
+          />
+          No
+        </label>
+      </div>
+    </div>
         <button type="submit" className="btn btn-primary">Add Worker</button>
       </form>
     </div>

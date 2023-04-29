@@ -1,3 +1,4 @@
+import customAlert from "../component/customalert";
 import { useRouter } from "next/router";
 import { doc, setDoc } from "firebase/firestore"; 
 import { useState,useEffect,useRef } from "react";
@@ -30,10 +31,10 @@ const Signup = function() {
     try {
       const authRef = await signup(emailRef, passwordRef)
       userIdRef.current= authRef.user.uid
-      alert("User Created");
+      customAlert("User Created","success");
       setFillup(true)
     }catch (err) {
-      alert(err.message)
+      customAlert(err.message,"error")
     }
   }
   const entryDataDetails= async(e) => {
@@ -43,13 +44,13 @@ const Signup = function() {
       {
         console.log(emailRef)
       await setDoc(doc(db, "customer", userIdRef.current), {...register,type:"user",email:emailRef});
-      alert("Registered");
+      customAlert("Registered","success");
       await dataset(userIdRef.current)
       setRegister({displayName:"",email:"",phoneNumber:"",altPhoneNumber:"",address:""})
       router.push('setprofile')
       }
     }catch(err){
-      alert(err.message)
+      customAlert(err.message,"error")
     }
   }
   

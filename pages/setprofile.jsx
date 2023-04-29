@@ -1,3 +1,4 @@
+import customAlert from "../component/customalert";
 import Avatar from "@mui/material/Avatar";
 
 import { useRef } from "react";
@@ -80,16 +81,16 @@ const getCropData = () => {
           .then(async(url) => {
             setCookie(null, "profilepic", url ,{secure:true,maxAge: 30 * 24 * 60 * 60 * 60 * 365,sameSite: "strict"})
             await updateDoc(doc(db, "customer", userData.id), {profilepic:url}).then(function(){
-           alert("success")
+           customAlert("successfully added","success");
          })
           })
           .catch((error) => {
-            alert(error.message, "error getting the image url");
+            customAlert(error.message, "error");
           });
         setUpload(null);
       })
       .catch((error) => {
-        alert(error.message);
+        customAlert(error.message,"error");
       });
     router.push('dashboard')
   }

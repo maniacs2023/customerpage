@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import customAlert from '../../../../component/customalert';
 import { useRouter } from "next/router";
 import { db } from "../../../../firebase.js";
 import { doc, getDoc, addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -54,10 +55,10 @@ const WorkerDetailsPage = () => {
           timestamp: serverTimestamp()
         };
         await addDoc(bookingRef, booking);
-        alert("Booking successful");
+        customAlert("Booking successful", 'success');
       } catch (error) {
-        console.error(error);
-        alert("Error occurred while booking");
+        customAlert(error.message,'warning');
+        customAlert("Error occurred while booking", 'error');
       }
     }
   };
