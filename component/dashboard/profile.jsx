@@ -8,9 +8,6 @@ const Profile = () =>{
   const {user,userdata} = useAuth()
   const router = useRouter()
   const userData = parseCookies()
-  const backToHome = () =>{
-    router.push('/')
-  }
   return(
     <>
       <style jsx>{`
