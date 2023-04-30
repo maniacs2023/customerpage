@@ -5,7 +5,7 @@ import { db } from "../../../../firebase.js";
 import { doc, getDoc, addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { parseCookies } from "nookies";
 import StarRating from "../../../../component/booking/starRating";
-import Image from 'next/image'
+
 const WorkerDetailsPage = () => {
   const router = useRouter();
   const { id } = router.query;
@@ -100,8 +100,10 @@ const WorkerDetailsPage = () => {
     text-align:center;
     padding:20px;
   }
-  
-  
+  .imagebox img{
+    width:400px;
+    height:400px;
+  }
   `}</style>
     <div id="maincontainer" className="container mx-auto px-4 md:px-0 max-w-screen-md">
        <div className="flex justify-center items-center h-screen row">
@@ -131,7 +133,7 @@ const WorkerDetailsPage = () => {
       </div>
       <div className="rounded-lg p-5 col-12 col-md-6 col-xl-6">
         <div className="imagebox ">
-        <img id="profile-image" src="https://dummyimage.com/400x400/9c8c9c/080808&text=WorkerPic" />
+        <img id="profile-image" src={(worker?.profilepic!=null)?(worker?.profilepic):"https://dummyimage.com/400x400/9c8c9c/080808&text=WorkerPic"} />
         </div>
       </div>
       <div className="flex justify-center p-5 m-5 items-center h-screen">

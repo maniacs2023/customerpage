@@ -104,7 +104,7 @@ const WorkersPage = () => {
       <div className=" row justify-content-center d-flex">
         <div className="col-4 justify-content-center d-flex">
           <div className="mb-auto mx-auto mt-2">
-            <img id="profile-image" src="https://dummyimage.com/400x400/9c8c9c/080808&text=profile+pic" />
+            <img id="profile-image" src={(u?.profilepic!=null)?(u?.profilepic):"https://dummyimage.com/400x400/9c8c9c/080808&text=profile+pic"} />
           </div>
         </div>
         <div className="col-8">
