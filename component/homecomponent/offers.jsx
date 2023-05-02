@@ -21,34 +21,44 @@ export default function Offers(){
   width:calc(13vw + 12vh);
   height:calc(6vw + 10vh);
 }
-
+.image:hover{
+  border: 3px dashed var(--main-theme-color); 
+  animation: hoverimg 0.1s ease-in-out infinite alternate;
+}
+@keyframes hoverimg {
+  from {
+    border: 3px dashed var(--main-theme-color); 
+  }
+  to {
+    border: 3px dotted var(--sub-theme-color); 
+  }
+}
 .overlay {
   position: absolute; 
   bottom: 0; 
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  color: #f1f1f1; 
+  text-shadow: -1px -1px 0 #FFA500, 1px -1px 0 #FFA500, -1px 1px 0 #FFA500, 1px 1px 0 #FFA500;
+  color:yellow;
+  font-weight:bold;
   width: 100%;
   border-top-left-radius: 180px 180px;
   border-top-right-radius: 180px 180px;
   transition: 0.5s ease-in-out;
   opacity:0;
-  color: white;
   font-size: 18px;
   text-align: center;
 }
 .code{
   font-family: "Lucida Console", "Courier New", monospace;
   animation: glow 0.2s ease-in-out infinite alternate;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 var(--main-theme-color), -1px 1px 0 var(--main-theme-color), 1px 1px 0 var(--main-theme-color);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   
 }
 @keyframes glow {
   from {
-    color: white;
+    color: var(--main-theme-color);
   }
-  
   to {
-    color: var(--light-type-color);
+    color: red;
   }
 }
 .container-link:hover .overlay, .container-link:active .overlay, .container-link:active .overlay {
