@@ -4,7 +4,7 @@ import Features from '../component/homecomponent/features.jsx'
 import Offers from '../component/homecomponent/offers.jsx'
 import Hometemplate from "../component/template/hometemplate.jsx"
 import Description from "../pages/description.jsx"
-
+import Whychooseus from "../component/homecomponent/whychooseus"
 function Home() {
   
   return (
@@ -15,6 +15,7 @@ function Home() {
       
       <Categories/>
       <Features/>
+      <Whychooseus/>
       <Description/>
       </Hometemplate>
     </>

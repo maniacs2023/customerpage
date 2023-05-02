@@ -46,9 +46,26 @@ export default function Features(){
   font-size:36px;
   color:var(--text-color);
 }
+#spanheading{
+  color:red;
+  font-size: 60px;
+}
+.btnfeature{
+  background-color:var(--sub-theme-color);
+  color:white;
+  padding: 10px 16px;
+  border:0;
+  border-radius: 8px;
+  position:relative;
+  outline:none;
+  margin-bottom: 20px;
+}
+.btnfeature:hover,.btnfeature:active{
+  background-color:var(--main-theme-color);
+}
     `}</style>
   <div className="container mt-5">
-    <h1 className="text-center" id="sub-heading">Features</h1>
+    <h1 className="text-center" id="sub-heading">Highlights<span id="spanheading">@</span>Maniacs</h1>
     <div className="row d-flex justify-content-center">
     <div className="col-12 col-sm-6 col-md-6 col-xl-4 d-flex justify-content-center mb-5"> 
       <div id="feature-card">
@@ -56,8 +73,9 @@ export default function Features(){
             <i className="bi bi-archive-fill"></i>
           </div>
           <div className="feature-text text-center mt-3">
-            <h3>Research user needs</h3>
-            <p>Discover pain points and understand user behaviour</p>
+            <h3>Get Health Insurance</h3>
+            <p>Get your worker the cheapest health insurance in partnership with us & secure their health & future.</p>
+            <button className="btnfeature">Fill Your Details</button>
           </div>
     </div>
     </div>
@@ -67,9 +85,10 @@ export default function Features(){
       <i className="bi bi-award"></i>
         </div>
         <div className="feature-text text-center mt-3">
-            <h3>Prototype an idea</h3>
-            <p>Validate ideas with an interactive prototype of your vision</p>
-          </div>
+            <h3>Register as a worker</h3>
+            <p>Register to work with us! Just fill this form & get rewards up to Rs. 100.We will get back to you.</p>
+            <button className="btnfeature">Fill Your Details</button>
+        </div>
     </div>
     </div>
       <div className="col-12 col-sm-6 col-md-6 col-xl-4 d-flex justify-content-center mb-5"> 
@@ -78,9 +97,11 @@ export default function Features(){
           <i className="bi bi-briefcase"></i>
         </div>
         <div className="feature-text text-center mt-3">
-            <h3>Design a new product</h3>
-            <p>Launch an MVP with a best in class user experience</p>
-          </div>
+            <h3>Refer a worker</h3>
+            <p>Do your bit by getting them a job that pays well! Help them register as a Worker now & get rewards up to Rs. 100</p>
+            <button className="btnfeature">Fill Your Details</button>
+        </div>
+        
     </div>
     </div>
   </div>

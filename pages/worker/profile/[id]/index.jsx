@@ -34,10 +34,12 @@ const WorkerDetailsPage = () => {
     const caltPhone = cookies.altPhoneNumber;
     const cEmail = cookies.email;
     const cAddress = cookies.address;
+    const cProfilePic = cookies.profilepic;
     const wName = worker.name;
     const wPhone = worker.phone;
     const wEmail = worker.email;
     const wType = worker.profession;
+    const wProfilePic = worker.profilepic;
     const Bill = null;
     if (cId && id ) {
       try {
@@ -50,6 +52,8 @@ const WorkerDetailsPage = () => {
           wPhone: wPhone,
           wType: wType,
           bill: Bill,
+          cProfilePic: cProfilePic,
+          wProfilePic: wProfilePic,
           statusDescription: "waiting for response",
           status: "upcoming",
           timestamp: serverTimestamp()

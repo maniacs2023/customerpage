@@ -13,6 +13,6 @@ module.exports = [
     },
     {"key":4,
      "url": require("../../../public/img/offer/offer4.webp").default.src,
-    "code": "COOK10"
+    "code": "SMMR499"
     }
 ]

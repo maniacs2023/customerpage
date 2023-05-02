@@ -26,7 +26,7 @@ export default function Description() {
         <h1 className={styles.subHeading} id="sub-heading">Our Company</h1>
         <Col md={6}>
         <div className={styles.imageContainer}>
-            <img src="/img/description-img.jpg" alt="Description Image" className={styles.img} />
+            <img src="/img/aboutimg/aboutimage1.webp" alt="Description Image" className={styles.img} />
           </div>
         </Col>
         <Col md={6}>
@@ -47,7 +47,7 @@ export default function Description() {
         </Col>
         <Col md={6}>
         <div className={styles.imageContainer}>
-            <img src="/img/description-img.jpg" alt="Description Image" className={styles.img} />
+            <img src="/img/aboutimg/aboutimage2.webp" alt="Description Image" className={styles.img} />
           </div>
         </Col>
       </Row>
@@ -55,7 +55,7 @@ export default function Description() {
       <h1 className={styles.subHeading} id="sub-heading">Our Future</h1>
         <Col md={6}>
           <div className={styles.imageContainer}>
-            <img src="/img/description-img.jpg" alt="Description Image" className={styles.img} />
+            <img src="/img/aboutimg/aboutimage3.webp" alt="Description Image" className={styles.img} />
           </div>
         </Col>
         <Col md={6}>

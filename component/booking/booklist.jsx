@@ -125,7 +125,7 @@ function handleClickForCategory(status) {
                     
                     <div className="col-3 col-md-2">
                     <div className="image-container">
-                        <Avatar src="/avatar/cancel.png" sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
+                        <Avatar src={u?.wProfilePic} sx={{ width: 56, height: 56 }} style={{"backgroundColor":"var(--light-type-color)"}}/>
                     </div>
                     </div>
                     
