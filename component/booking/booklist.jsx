@@ -1,7 +1,7 @@
 import Avatar from "@mui/material/Avatar";
 import Statusicon from "./statusicon.jsx";
 import { getFirestore, collection, getDocs, where, query, orderBy } from 'firebase/firestore';
-
+import customAlert from "../customalert"
 
 import { useState,useEffect } from "react";
 import { parseCookies } from "nookies";
@@ -10,17 +10,21 @@ const Booklist =() =>{
     const [filteredBookings,setFilteredBookings] = useState([]);
     const cookies = parseCookies();
     const uId = cookies.id;
+    const getBookings = async () => {
+        const db = getFirestore();
+        const bookingsRef = collection(db, 'booking')
+    
+        const q = query(bookingsRef, where('cId', '==', uId), orderBy("timestamp", "desc"));
+        const snapshot = await getDocs(q);
+        const bookings = snapshot.docs
+          .map((doc) => ({ id: doc.id, ...doc.data() }));
+        return bookings;
+      }
+      function handleRefresh(e){
+        e.preventDefault();
+        getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Data Refreshed")});
+      }
 useEffect(() => {
-  const getBookings = async () => {
-    const db = getFirestore();
-    const bookingsRef = collection(db, 'booking')
-
-    const q = query(bookingsRef, where('cId', '==', uId), orderBy("timestamp", "desc"));
-    const snapshot = await getDocs(q);
-    const bookings = snapshot.docs
-      .map((doc) => ({ id: doc.id, ...doc.data() }));
-    return bookings;
-  }
   getBookings().then((b) => {setBookings(b);setFilteredBookings(b)});
 }, []);
 function handleClickForCategory(status) {
@@ -70,6 +74,25 @@ function handleClickForCategory(status) {
     .inactive{
         color: grey;
     }
+    .refreshbtn {
+        background-color:transparent;
+        outline:none;
+        border:none;
+        padding:0;
+        font-size:35px;
+        color: var(--main-theme-color);
+    }
+    .refreshbtn span{
+        font-size:16px;
+        color: var(--text-color);
+        opacity:0;
+    }
+    .refreshbtn:hover span{
+        opacity:1;
+    }
+    .refreshdiv{
+        text-align: right;
+    }
     #eachItem {
         opacity: 1;
         transform: translateY(0);
@@ -118,7 +141,9 @@ function handleClickForCategory(status) {
                 </div>
             </div>
         </div>
+
         <div className="mx-auto mb-3 col-12 col-sm-10 col-md-8 col-xl-8 col backgd">
+        <div className="refreshdiv"><button onClick={(e)=>handleRefresh(e)} className="refreshbtn"><span>Click to Refresh</span><i className="bi bi-arrow-clockwise"></i></button></div>
         {filteredBookings.map(u=>       
             <div id="eachItem" key={u.id} className="mb-3 card">
                 <div className="card-body row theme-color"> 
