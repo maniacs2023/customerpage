@@ -20,7 +20,7 @@ function Loading() {
     `}</style>
         <div className="fullscreen">
             <div className="Loading">
-              <Image src="/loading.gif" alt="My GIF" fill/>
+              <Image src="/loading.gif" alt="My GIF" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
             </div>
         </div>
       </>);

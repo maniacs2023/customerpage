@@ -53,6 +53,8 @@ const WorkerDetailsPage = () => {
           wType: wType,
           bill: Bill,
           cProfilePic: cProfilePic,
+          clocationlat: cookies?.gpslat,
+          clocationlon: cookies?.gpslon,
           wProfilePic: wProfilePic,
           statusDescription: "waiting for response",
           status: "upcoming",

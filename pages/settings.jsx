@@ -1,4 +1,5 @@
+import MyMap from "../component/tomtommap/mymap"
 const Settings = () =>{
-  return(<>hello</>)
+  return(<></>)
 }
 export default Settings
