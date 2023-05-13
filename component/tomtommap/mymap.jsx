@@ -34,7 +34,7 @@ const MyMap = (props) => {
   }, []);
 
   return (<>
-  <div ref={mapElement} className="mapDiv"  style={{"width":"400px","height":"400px"}}/>
+  <div ref={mapElement} className="mapDiv"  style={{"width":"100vw","height":"100vh"}}/>
   </>);
 }
 
