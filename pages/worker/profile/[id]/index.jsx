@@ -63,11 +63,11 @@ useEffect(()=>{
     const cEmail = cookies.email;
     const cAddress = cookies.address;
     const cProfilePic = cookies.profilepic;
-    const wName = worker.name;
-    const wPhone = worker.phone;
-    const wEmail = worker.email;
-    const wType = worker.profession;
-    const wProfilePic = worker.profilepic;
+    const wName = worker?.name;
+    const wPhone = worker?.phone;
+    const wEmail = worker?.email;
+    const wType = worker?.profession;
+    const wProfilePic = worker?.profilepic;
     const Bill = null;
     if (cId && id ) {
       try {
