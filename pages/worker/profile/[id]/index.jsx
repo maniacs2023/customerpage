@@ -5,11 +5,15 @@ import { db } from "../../../../firebase.js";
 import { doc, getDoc, addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { parseCookies } from "nookies";
 import StarRating from "../../../../component/booking/starRating";
-
+import {getAddress} from "../../../../component/tomtommap/getaddress";
+import GetGPS from "../../../../component/homecomponent/backgroundimage/searchbar/getgps";
 const WorkerDetailsPage = () => {
   const router = useRouter();
   const { id } = router.query;
+  const [gps, setGps] = useState(false)
+  const [baddress,setBaddress] = useState("");
   const [worker, setWorker] = useState(null);
+  const cookies = parseCookies();
   useEffect(() => {
     const fetchData = async () => {
       getDoc(doc(db, "worker", id)).then((docSnap) => {
@@ -19,15 +23,39 @@ const WorkerDetailsPage = () => {
             
           }
       })
+      
     };
     
     if (id) {
       fetchData()
     }
   }, [id]);
+  
+  const setgpslocation = flag => {
+    customAlert("Enter your location")
+      setGps(gps => true && flag)
+  }
 
+useEffect(()=>{
+  const getbookingAddress = () =>{
+    if(cookies?.gpslat !== undefined || cookies?.gpslon !== undefined ){
+    getAddress(cookies?.gpslat, cookies?.gpslon)
+    .then(address => {
+          setBaddress(address);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+      setGps(false);
+    }
+    else{
+      
+      setGps(true);
+    }
+  }
+  return(()=>getbookingAddress());
+},[gps])
   const handleBookNow = async () => {
-    const cookies = parseCookies();
     const cId = cookies.id;
     const cName = cookies.displayName;
     const cPhone = cookies.phoneNumber;
@@ -55,6 +83,7 @@ const WorkerDetailsPage = () => {
           cProfilePic: cProfilePic,
           clocationlat: cookies?.gpslat,
           clocationlon: cookies?.gpslon,
+          bloaction: baddress,
           wProfilePic: wProfilePic,
           statusDescription: "waiting for response",
           status: "upcoming",
@@ -135,7 +164,15 @@ const WorkerDetailsPage = () => {
         >
           Book Now
         </button>
-        
+        {baddress==="" ? <>
+        {gps && <GetGPS setgpslocation={setgpslocation}/>}
+        </>:
+        <>
+        <div>
+        {baddress}
+        </div>
+        </>
+        }
       </div>
       <div className="rounded-lg p-5 col-12 col-md-6 col-xl-6">
         <div className="imagebox ">

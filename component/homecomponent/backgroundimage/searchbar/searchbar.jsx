@@ -135,7 +135,7 @@ export default function Searchbar() {
           </div>
         </form>
       </div>
-      {gps && <h3>hello</h3> && <GetGPS setgpslocation={setgpslocation} />}
+      {gps && <GetGPS setgpslocation={setgpslocation} />}
     </div>
   </>)
 }
