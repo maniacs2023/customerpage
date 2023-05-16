@@ -184,6 +184,10 @@ function handleClickForCategory(status) {
                         <div id="billamount" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
                             <b>Bill:</b> Rs {u.bill==null?"--.--":u.bill}
                         </div>
+                        {u?.OTP==null?<></>:<>
+                        <div id="otpvalue" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                            <b>OTP:</b> {u.OTP}
+                        </div></>}
                     </div>  
                 </div>
             </div>
