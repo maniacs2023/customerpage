@@ -170,13 +170,8 @@ a:hover, a:active{
           </a>
         </li>
         <li className="navitem">
-          <a className="navlink" href="https://workerpage.maniacscse.repl.co/">
+          <a className="navlink" href="https://job-worker.vercel.app/">
             Worker
-          </a>
-        </li>
-        <li className="navitem">
-          <a className="navlink" href="https://coordinatorpage.maniacscse.repl.co/">
-            Coordinator
           </a>
         </li>
         <hr/>

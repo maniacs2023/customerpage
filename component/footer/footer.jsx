@@ -34,7 +34,7 @@ export default function Footer(){
                 <a>Customer Service</a>
               </p>
               <p>
-                <a>Join as Worker</a>
+                <a href="https://job-worker.vercel.app/">Join as Worker</a>
               </p>
               <p>
                 <a>Join as Coordinator</a>

@@ -75,7 +75,7 @@ export default function Features(){
           <div className="feature-text text-center mt-3">
             <h3>Get Health Insurance</h3>
             <p>Get your worker the cheapest health insurance in partnership with us & secure their health & future.</p>
-            <button className="btnfeature">Fill Your Details</button>
+            <button className="btnfeature" onClick={()=>window.open("https://job-worker.vercel.app/","_blank")}>Fill Your Details</button>
           </div>
     </div>
     </div>
@@ -87,7 +87,7 @@ export default function Features(){
         <div className="feature-text text-center mt-3">
             <h3>Register as a worker</h3>
             <p>Register to work with us! Just fill this form & get rewards up to Rs. 100.We will get back to you.</p>
-            <button className="btnfeature">Fill Your Details</button>
+            <button className="btnfeature" onClick={()=>window.open("https://job-worker.vercel.app/","_blank")}>Fill Your Details</button>
         </div>
     </div>
     </div>
@@ -99,7 +99,7 @@ export default function Features(){
         <div className="feature-text text-center mt-3">
             <h3>Refer a worker</h3>
             <p>Do your bit by getting them a job that pays well! Help them register as a Worker now & get rewards up to Rs. 100</p>
-            <button className="btnfeature">Fill Your Details</button>
+            <button className="btnfeature" onClick={()=>window.open("https://job-worker.vercel.app/","_blank")}>Fill Your Details</button>
         </div>
         
     </div>
