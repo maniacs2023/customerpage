@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { setCookie } from 'nookies';
 const Rating = ({ onChildValue }) => {
   const [rating, setRating] = useState(0);
 
