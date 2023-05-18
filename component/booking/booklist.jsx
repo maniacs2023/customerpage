@@ -24,9 +24,7 @@ const Booklist =() =>{
         e.preventDefault();
         getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Data Refreshed")});
       }
-      async function changeRating(e,bid,wid,prestar,newstar){
-        e.preventDefault();
-        console.log(id);
+      async function changeRating(bid,wid,prestar,newstar){
         try{
             const db = getFirestore();
             await updateDoc(doc(db,"worker", wid), {star: ((Number(prestar)/Number(newstar))/2)}).then(function(){
@@ -206,7 +204,7 @@ function handleClickForCategory(status) {
                         </div></>:<></>}
                         {u?.statusDescription == "Completed"
                             && <div id="rating" className="col-12 sol-sm-12 col-md-12 col-xl-12 col">
-                                <b>Rating:</b> <Rating/> <button className="btn bg-primary text-light" onClick={(e)=>changeRating(e,u.id,u.wid,u.wStar,cookies.newRating)}>Submit</button>
+                                <b>Rating:</b> <Rating/> <button className="btn bg-primary text-light" onClick={()=>changeRating(u.id,u.wid,u.wStar,cookies.newRating)}>Submit</button>
                             </div>
                         }
                     </div>  
