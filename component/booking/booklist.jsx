@@ -1,8 +1,8 @@
 import Avatar from "@mui/material/Avatar";
 import Statusicon from "./statusicon.jsx";
-import { getFirestore, collection, getDocs, where, query, orderBy } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, where, doc, updateDoc, query, orderBy } from 'firebase/firestore';
 import customAlert from "../customalert"
-
+import Rating from "./rating.jsx"
 import { useState,useEffect } from "react";
 import { parseCookies } from "nookies";
 const Booklist =() =>{
@@ -23,6 +23,22 @@ const Booklist =() =>{
       function handleRefresh(e){
         e.preventDefault();
         getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Data Refreshed")});
+      }
+      async function changeRating(e,bid,wid,prestar,newstar){
+        e.preventDefault();
+        console.log(id);
+        try{
+            const db = getFirestore();
+            await updateDoc(doc(db,"worker", wid), {star: ((Number(prestar)/Number(newstar))/2)}).then(function(){
+                console.log((Number(prestar)/Number(newstar))/2);
+            })
+            await updateDoc(doc(db, "booking", bid ), {statusDescription:"Previously Completed"}).then(function(){
+                getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Rating Submitted")});
+            })
+          }catch(e){
+              console.log(e);
+              customAlert("error : " ,e);
+            }
       }
 useEffect(() => {
   getBookings().then((b) => {setBookings(b);setFilteredBookings(b)});
@@ -185,9 +201,14 @@ function handleClickForCategory(status) {
                             <b>Bill:</b> Rs {u.bill==null?"--.--":u.bill}
                         </div>
                         {u?.OTP !== null && u?.statusDescription =="Confirmed" ?<>
-                        <div id="otpvalue" className="col-12 col-sm-6 col-md-12 col-xl-4 col-xl-4 ">
+                        <div id="otpvalue" className="col-12 col-sm-6 col-md-12 col-xl-4">
                             <b>OTP:</b> {u.OTP}
                         </div></>:<></>}
+                        {u?.statusDescription == "Completed"
+                            && <div id="rating" className="col-12 sol-sm-12 col-md-12 col-xl-12 col">
+                                <b>Rating:</b> <Rating/> <button className="btn bg-primary text-light" onClick={(e)=>changeRating(e,u.id,u.wid,u.wStar,cookies.newRating)}>Submit</button>
+                            </div>
+                        }
                     </div>  
                 </div>
             </div>

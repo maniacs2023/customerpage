@@ -68,6 +68,7 @@ useEffect(()=>{
     const wEmail = worker?.email;
     const wType = worker?.profession;
     const wProfilePic = worker?.profilepic;
+    const wstar = worker?.star;
     const Bill = null;
     if (cId && id ) {
       try {
@@ -85,6 +86,7 @@ useEffect(()=>{
           clocationlon: cookies?.gpslon,
           bloaction: baddress,
           wProfilePic: wProfilePic,
+          wStar: wstar,
           statusDescription: "waiting for response",
           status: "upcoming",
           timestamp: serverTimestamp()
