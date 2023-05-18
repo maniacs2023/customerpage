@@ -8,6 +8,13 @@ import { parseCookies } from "nookies";
 const Booklist =() =>{
     const [bookings, setBookings] = useState([]);
     const [filteredBookings,setFilteredBookings] = useState([]);
+
+    const [ratingbyuser, setRatingbyuser] = useState(0);
+
+    const handleChildValue = (value) => {
+      setRatingbyuser(value);
+    };
+
     const cookies = parseCookies();
     const uId = cookies.id;
     const getBookings = async () => {
@@ -26,14 +33,17 @@ const Booklist =() =>{
       }
       async function changeRating(bid,wid,prestar){
         try{
-            console.log(prestar+" "+cookies.newRating)
+            //console.log(prestar+" "+ratingbyuser)
             const db = getFirestore();
-            await updateDoc(doc(db,"worker", wid), {star: (((parseFloat(prestar) + parseFloat(cookies.newRating)))/2)}).then(function(){
-                console.log((parseFloat(prestar)+parseFloat(cookies.newRating))/2);
+            if(!isNaN(parseFloat(prestar)) && !isNaN(parseFloat(ratingbyuser))){
+            await updateDoc(doc(db,"worker", wid), {star: (((parseFloat(prestar) + parseFloat(ratingbyuser)))/2)}).then(function(){
+                customAlert("Rating Submitted Succesfully") 
             })
+            }
             await updateDoc(doc(db, "booking", bid ), {statusDescription:"Previously Completed"}).then(function(){
-                getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Rating Submitted")});
+                getBookings().then((b) => {setBookings(b);setFilteredBookings(b);});
             })
+            setRatingbyuser(0);
           }catch(e){
               console.log(e);
               customAlert("error : " + e ,"error");
@@ -205,7 +215,7 @@ function handleClickForCategory(status) {
                         </div></>:<></>}
                         {u?.statusDescription == "Completed"
                             && <div id="rating" className="col-12 sol-sm-12 col-md-12 col-xl-12 col">
-                                <b>Rating:</b> <Rating/> <button className="btn bg-primary text-light" onClick={()=>changeRating(u.id,u.wId,u.wStar)}>Submit</button>
+                                <b>Rating:</b> <Rating onChildValue={handleChildValue}/> {ratingbyuser>0 &&<button className="btn bg-primary text-light" onClick={()=>changeRating(u.id,u.wId,u.wStar)}>Submit</button>}
                             </div>
                         }
                     </div>  

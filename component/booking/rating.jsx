@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { setCookie } from 'nookies';
-const Rating = () => {
+const Rating = ({ onChildValue }) => {
   const [rating, setRating] = useState(0);
 
   const handleRating = (value) => {
     setRating(value)
-    setCookie(null, "newRating",value,
-        {secure:true,maxAge: 30 * 24 * 60 * 60 * 60 * 365,sameSite: "strict"})
+    onChildValue(value);
   };
 
   return (<>
