@@ -24,18 +24,19 @@ const Booklist =() =>{
         e.preventDefault();
         getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Data Refreshed")});
       }
-      async function changeRating(bid,wid,prestar,newstar){
+      async function changeRating(bid,wid,prestar){
         try{
+            console.log(prestar+" "+cookies.newRating)
             const db = getFirestore();
-            await updateDoc(doc(db,"worker", wid), {star: ((Number(prestar)/Number(newstar))/2)}).then(function(){
-                console.log((Number(prestar)/Number(newstar))/2);
+            await updateDoc(doc(db,"worker", wid), {star: (((parseFloat(prestar) + parseFloat(cookies.newRating)))/2)}).then(function(){
+                console.log((parseFloat(prestar)+parseFloat(cookies.newRating))/2);
             })
             await updateDoc(doc(db, "booking", bid ), {statusDescription:"Previously Completed"}).then(function(){
                 getBookings().then((b) => {setBookings(b);setFilteredBookings(b);customAlert("Rating Submitted")});
             })
           }catch(e){
               console.log(e);
-              customAlert("error : " ,e);
+              customAlert("error : " + e ,"error");
             }
       }
 useEffect(() => {
@@ -204,7 +205,7 @@ function handleClickForCategory(status) {
                         </div></>:<></>}
                         {u?.statusDescription == "Completed"
                             && <div id="rating" className="col-12 sol-sm-12 col-md-12 col-xl-12 col">
-                                <b>Rating:</b> <Rating/> <button className="btn bg-primary text-light" onClick={()=>changeRating(u.id,u.wid,u.wStar,cookies.newRating)}>Submit</button>
+                                <b>Rating:</b> <Rating/> <button className="btn bg-primary text-light" onClick={()=>changeRating(u.id,u.wId,u.wStar)}>Submit</button>
                             </div>
                         }
                     </div>  

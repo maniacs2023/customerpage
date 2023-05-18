@@ -4,10 +4,9 @@ const Rating = () => {
   const [rating, setRating] = useState(0);
 
   const handleRating = (value) => {
-    setRating(value).then(function(){
-        setCookie(null, "newRating",value,
-        {secure:true,maxAge: 30,sameSite: "strict"})
-    });
+    setRating(value)
+    setCookie(null, "newRating",value,
+        {secure:true,maxAge: 30 * 24 * 60 * 60 * 60 * 365,sameSite: "strict"})
   };
 
   return (<>
